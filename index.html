@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fef5e7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .newspaper {
+            width: 100%;
+            border: 5px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 28px;
+            margin-top: 20px;
+            color: #d63384;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-yes {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-no {
+            background-color: #dc3545;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="newspaper.jpg" alt="Valentine Newspaper" class="newspaper">
+        <h1>David, will you be my Valentine?</h1>
+        <div class="buttons">
+            <button class="btn btn-yes" onclick="alert('Yay! I knew it! ❤️')">Yes</button>
+            <button id="noBtn" class="btn btn-no" onmouseover="moveNoButton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function moveNoButton() {
+            let noBtn = document.getElementById("noBtn");
+            let maxX = window.innerWidth - noBtn.clientWidth - 50;
+            let maxY = window.innerHeight - noBtn.clientHeight - 50;
+            let randomX = Math.floor(Math.random() * maxX);
+            let randomY = Math.floor(Math.random() * maxY);
+            noBtn.style.left = randomX + "px";
+            noBtn.style.top = randomY + "px";
+            noBtn.style.fontSize = parseInt(window.getComputedStyle(noBtn).fontSize) * 0.9 + "px";
+        }
+    </script>
+
+</body>
+</html>
